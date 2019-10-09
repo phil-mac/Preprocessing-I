@@ -4,6 +4,8 @@
    License: none (public domain)
 */
 
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -57,31 +59,74 @@ html, body {
     height: 100%;
 }
 
-// new code
+// Phil's Code:
 
-@coloredFont: mediumpurple;
+// dev only start
+// header, section, footer, div, a{
+// 	border: 1px solid grey;
+// }
+// dev only end
+
+// variables & mixins start
+@coloredFont: black;
+
+@color: rgb(237, 233, 242);
 
 @mobileWidth: 500px;
+
+@font: 'Noto Sans', sans-serif;
+
+@space: 2%;
+
+.flex-basic(){
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.fill-parent(){
+	width: 100%;
+}
+// variables & mixins end
+
 
 html{
 	font-size: 62.5%;
 }
 
-.flex-basic{
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-
-	
+body{
+	font-family: @font;
+	font-size: 1.6rem;
+	line-height: 140%;
 }
 
-.fill-parent{
-	width: 100%;
-	border: 1px solid grey;
+h1{
+	color: @coloredFont;
+	font-size: 4rem;
+	// margin: @vertMargin 0;
+}
+
+h2{
+	color: @coloredFont;
+	font-size: 2.5rem;
+	margin: @space 0;
+}
+
+h3{
+	color: @coloredFont;
+	font-size: 2rem;
+}
+
+p{
+	// margin: @space 0;
+}
+
+section{
+	margin: @space @space;
+ 	border-top: 1px solid grey;
 }
 
 .container{
-	background: palegoldenrod;
 	width: 60%;
 	margin: 0 auto;
 
@@ -109,10 +154,66 @@ html{
 		}
 	}
 
+	#intro{
+		.flex-basic();
 
-	h1{
-		font-size: 5rem;
-		color: @coloredFont;
+		text-align: center;
+		justify-content: space-evenly;
+		background: @color;
+
+		
+
+		.introText{
+			padding: 5%;
+		}
+
+		button{
+			margin: 3%;
+			padding: @space @space*2;
+			background: rgb(184, 240, 184);
+			font-size: 1.6rem;
+		}
+	}
+
+	#about{
+		.flex-basic();
+
+		@media(max-width: @mobileWidth + 400){
+			flex-direction: column;
+		}
+
+		.aboutText{
+			width: 49%;
+			padding: @space;
+		}
+
+		.aboutImage{
+			width: 49%;
+
+			@media(max-width: @mobileWidth + 400){
+				width: 100%;
+				margin: 3% 0;
+			}
+			
+			img{
+				width: 100%;
+				max-width: 500px;
+			}
+		}
+	}
+
+	#work, #skills{
+		p{
+			padding-left: @space*2;
+		}
+
+		li{
+			padding: 1% @space;
+		}
+
+		li:nth-child(odd){
+			background: @color;
+		}
 	}
 }
 
