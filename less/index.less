@@ -57,3 +57,62 @@ html, body {
     height: 100%;
 }
 
+// new code
+
+@coloredFont: mediumpurple;
+
+@mobileWidth: 500px;
+
+html{
+	font-size: 62.5%;
+}
+
+.flex-basic{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+
+	
+}
+
+.fill-parent{
+	width: 100%;
+	border: 1px solid grey;
+}
+
+.container{
+	background: palegoldenrod;
+	width: 60%;
+	margin: 0 auto;
+
+	@media (max-width: @mobileWidth) {
+		width: 90%;
+	}
+
+	header{
+		.fill-parent();
+
+		nav{
+			.fill-parent();
+			.flex-basic();
+
+			@media (max-width: @mobileWidth){
+				flex-direction: column;
+				background: firebrick;
+			}
+
+			margin: 10px 0;
+
+			a{
+				text-decoration: none;
+			}
+		}
+	}
+
+
+	h1{
+		font-size: 5rem;
+		color: @coloredFont;
+	}
+}
+
