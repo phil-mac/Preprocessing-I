@@ -147,7 +147,6 @@ html {
 body {
   font-family: 'Noto Sans', sans-serif;
   font-size: 1.6rem;
-  line-height: 140%;
 }
 h1 {
   color: black;
@@ -155,19 +154,21 @@ h1 {
 }
 h2 {
   color: black;
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin: 2% 0;
 }
 h3 {
   color: black;
   font-size: 2rem;
 }
+p {
+  line-height: 140%;
+}
 section {
   margin: 2% 2%;
-  border-top: 1px solid grey;
 }
 .container {
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
 }
 @media (max-width: 500px) {
@@ -188,19 +189,22 @@ section {
 @media (max-width: 500px) {
   .container header nav {
     flex-direction: column;
-    background: firebrick;
   }
 }
 .container header nav a {
+  font-size: 1.2rem;
   text-decoration: none;
+  padding: 2% 2%;
+  color: black;
+}
+.container header nav a:hover {
+  color: #ede9f2;
+  background: grey;
 }
 .container #intro {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   text-align: center;
-  justify-content: space-evenly;
   background: #ede9f2;
+  padding: 2% 0;
 }
 .container #intro .introText {
   padding: 5%;
@@ -215,6 +219,8 @@ section {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  justify-content: space-between;
+  padding: 2% 0;
 }
 @media (max-width: 900px) {
   .container #about {
@@ -223,14 +229,19 @@ section {
 }
 .container #about .aboutText {
   width: 49%;
-  padding: 2%;
+  padding: 2% 0;
+}
+@media (max-width: 900px) {
+  .container #about .aboutText {
+    width: 90%;
+  }
 }
 .container #about .aboutImage {
   width: 49%;
 }
 @media (max-width: 900px) {
   .container #about .aboutImage {
-    width: 100%;
+    width: 90%;
     margin: 3% 0;
   }
 }
@@ -245,8 +256,41 @@ section {
 .container #work li,
 .container #skills li {
   padding: 1% 2%;
+  border-top: 1px solid grey;
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
 }
-.container #work li:nth-child(odd),
-.container #skills li:nth-child(odd) {
+.container #work li div,
+.container #skills li div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  justify-content: flex-start;
+}
+.container #work li div .xpInfo,
+.container #skills li div .xpInfo {
+  display: inline-block;
+  width: 33%;
+}
+.container #work li div .skillName,
+.container #skills li div .skillName {
+  display: inline-block;
+  width: 50%;
+}
+.container #work li p,
+.container #skills li p {
+  display: none;
+  margin-top: 1%;
+}
+.container #work li:last-child,
+.container #skills li:last-child {
+  border-bottom: 1px solid grey;
+}
+.container #work li:hover,
+.container #skills li:hover {
   background: #ede9f2;
+}
+.container #work li:hover p,
+.container #skills li:hover p {
+  display: block;
 }
