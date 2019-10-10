@@ -165,7 +165,7 @@ p {
   line-height: 140%;
 }
 section {
-  margin: 2% 2%;
+  margin: 4% 2%;
 }
 .container {
   width: 80%;
@@ -199,7 +199,7 @@ section {
 }
 .container header nav a:hover {
   color: #ede9f2;
-  background: grey;
+  background: #4d4d4d;
 }
 .container #intro {
   text-align: center;
@@ -214,6 +214,9 @@ section {
   padding: 2% 4%;
   background: #b8f0b8;
   font-size: 1.6rem;
+}
+.container #intro button:hover {
+  background: #8ee78e;
 }
 .container #about {
   display: flex;
@@ -293,4 +296,36 @@ section {
 .container #work li:hover p,
 .container #skills li:hover p {
   display: block;
+}
+@keyframes colorWheel {
+  0% {
+    background: lightgrey;
+  }
+  1% {
+    background: mediumpurple;
+  }
+  50% {
+    background: turquoise;
+  }
+  100% {
+    background: mediumpurple;
+  }
+}
+.container .messAround .boxCont {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.container .messAround .boxCont .box {
+  background: black;
+  width: 70px;
+  height: 70px;
+  animation: colorWheel 0.5s linear infinite;
+  animation-play-state: paused;
+}
+.container .messAround .boxCont .box:hover {
+  background: mediumpurple;
+  animation-play-state: running;
 }

@@ -1,0 +1,136 @@
+.container{
+	width: 80%;
+	margin: 0 auto;
+
+	@media (max-width: @mobileWidth) {
+		width: 90%;
+	}
+
+	header{
+		.fill-parent();
+
+		nav{
+			.fill-parent();
+			.flex-basic();
+
+			@media (max-width: @mobileWidth){
+				flex-direction: column;
+			}
+
+			margin: 10px 0;
+
+			a{
+				font-size: 1.2rem;
+				text-decoration: none;
+				padding: @space @space;
+				color:black;
+
+				&:hover{
+					color: @color;
+					background: lighten(black, 30%);
+				}
+			}
+		}
+	}
+
+	#intro{
+		text-align: center;
+		background: @color;
+		padding: @space 0;
+
+		.introText{
+			padding: 5%;
+		}
+
+		button{
+			margin: 3%;
+			padding: @space @space*2;
+			background: @buttonColor;
+			font-size: 1.6rem;
+
+			&:hover{
+				background: darken(@buttonColor, 10%);
+			}
+		}
+	}
+
+	#about{
+		.flex-basic();
+		justify-content: space-between;
+
+		padding: @space 0;
+
+		@media(max-width: @mobileWidth + 400){
+			flex-direction: column;
+		}
+
+		.aboutText{
+			width: 49%;
+			padding: @space 0;
+
+			@media (max-width: @mobileWidth + 400){
+				width: 90%;
+			}
+		}
+
+		.aboutImage{
+			width: 49%;
+
+			@media(max-width: @mobileWidth + 400){
+				width: 90%;
+				margin: 3% 0;
+			}
+			
+			img{
+				width: 100%;
+				max-width: 500px;
+			}
+		}
+	}
+
+	#work, #skills{
+		p{
+			padding-left: @space*2;
+		}
+
+		li{
+			padding: @space/2 @space;
+			border-top: @border;
+			border-left: @border;
+			border-right: @border;
+
+			div
+			{
+				.flex-basic();
+				justify-content: flex-start;
+
+				.xpInfo{
+					display: inline-block;
+					width: 33%;
+				}
+
+				.skillName{
+					display: inline-block;
+					width: 50%;
+				}
+			}
+
+			p{
+				display:none;
+				margin-top: 1%;
+			}
+		}
+
+		li:last-child{
+			border-bottom: 1px solid grey;
+		}
+
+		li:hover{
+			background: @color;
+
+			p{
+				display: block;
+			}
+		}
+	}
+}

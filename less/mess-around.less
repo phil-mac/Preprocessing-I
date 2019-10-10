@@ -1,0 +1,40 @@
+@keyframes colorWheel{
+    0%{background: lightgrey};
+    1%{background: mediumpurple};
+    // 20%{background: linear-gradient(purple, 5%)};
+    // 40%{background: lighten(@purple, 10%)};
+    // 60%{background: lighten(@purple, 15%)};
+    // 80%{background: lighten(@purple, 20%)};
+    50%{background: turquoise};
+    100%{background: mediumpurple}
+    // 20%{background: blue};
+    // 40%{background: green};
+    // 60%{background: yellow};
+    // 80%{background: orange};
+    // 100%{background: red};
+}
+
+.container{
+     .messAround .boxCont{
+
+        .flex-basic();
+
+        justify-content: flex-start;
+        flex-wrap: wrap;
+
+        .box{
+            background: black;
+
+            width:70px;
+            height:70px;
+
+            animation: colorWheel 0.5s linear infinite;
+            animation-play-state: paused;
+
+            &:hover{
+                background: mediumpurple;
+                animation-play-state:running;
+            }
+        }
+    }
+}
